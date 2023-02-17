@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'DC_Circle.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+</head>
+
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br>
+    {% if options %}
+    <div class="dropdown">
+      <span>Options</span>
+      <div class="dropdown-content">
+        {% for option in options %}
+        <a href="#">{{ option }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <script src="{% static 'form.js' %}"></script>
+  
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static %}
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepesh</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'DC_Circle.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+</head>
+
+<body>
+    <form class="form" action= "{% url 'submit_form' %}" method="post">
+        {% csrf_token %}
+        <h1 class="title"> <u id="gap">Login!</u></h1>
+        <div class="main">
+            <i class="fas fa-user"></i>
+            <input class="inp1" placeholder="Username"  name="f-name" type="text" required onfocus="this.placeholder=''" onblur="this.placeholder='Username'"><br>
+        </div>
+        <div class="main">
+            <i class="fas fa-lock"></i>
+            <input class="inp2" placeholder="Password"  onfocus="this.placeholder=''" onblur="this.placeholder='Password'" type="password"><br>
+        </div>
+        <div class="google">
+            <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+            </a>
+            <label class="social" for="google">Sign In With Google</label>
+        </div><br>
+        <input class="sub" value="SUBMIT" type="submit">
+        <p id="para">
+            <b id="bold">Deepesh Sample!!!</b><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Obcaecati ea eligendi autem non repellendus error,<br>
+            nihil ab officia impedit magnam architecto repudiandae.<br>
+            Error ratione qui reprehenderit et accusantium ipsum quos.
+        </p>
+        <p id="para1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Obcaecati ea eligendi autem non repellendus error,<br>
+            nihil ab officia impedit magnam architecto repudiandae.<br>
+            Error ratione qui reprehenderit et accusantium ipsum quos.
+        </p>
+        <script src="{% static 'Functions.js' %}"></script>
+    </form>
+    <nav class="nav">
+        <img onClick="window.location.reload();" id="image" src="{% static 'DC.jpg' %}" alt="Logo">
+        <label onclick="notext()" class="home">Home</label>
+        <label onclick="text()" class="about">About</label>
+        <label onclick="text1()" class="working">Working</label>
+    </nav>
+
+</body>
+</html>
